@@ -1,0 +1,47 @@
+<ion-content>
+  <div class="leftSideBar">
+    <div class="top-line">
+      <ion-button fill="outline" size="small" color="dark">New Chat
+        <ion-icon slot="start" name="add"></ion-icon>
+      </ion-button>
+      <ion-button fill="outline" size="small" color="danger">
+        <ion-icon name="square-outline" size="large"></ion-icon>
+      </ion-button>
+    </div>
+    <ion-item-group>
+      <ion-item-divider>
+        <ion-label>A</ion-label>
+      </ion-item-divider>
+
+      <ion-item lines="none" color="dark">
+        <ion-icon name="chatbox-outline" size="small" slot="start"></ion-icon>
+        <ion-label color="light">Angola</ion-label>
+      </ion-item>
+      <ion-item lines="none" color="dark">
+        <ion-icon name="chatbox-outline" size="small" slot="start"></ion-icon>
+        <ion-label color="light">Argentina</ion-label>
+      </ion-item>
+      <ion-item lines="none" color="dark">
+        <ion-icon  name="chatbox-outline" size="small" slot="start"></ion-icon>
+        <ion-label color="light">Armenia</ion-label>
+      </ion-item>
+    </ion-item-group>
+  </div>
+  <div class="main-content">
+    <ion-grid>
+      <div class="chat-area">
+        <app-chat-block *ngFor="let text of textList" [text]="text"></app-chat-block>
+      </div>
+      <ion-row class="input-area">
+        <ion-item lines="none">
+          <ion-input #userInput placeholder="Send a message."></ion-input>
+          <ion-button fill="clear" size="large"
+                      [disabled]="userInput.value === ''"
+                      (click)="getUerInputText(userInput.value); userInput.value = ''">
+            <ion-icon slot="end" name="arrow-forward-outline"></ion-icon>
+          </ion-button>
+        </ion-item>
+      </ion-row>
+    </ion-grid>
+  </div>
+</ion-content>
