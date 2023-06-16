@@ -23,10 +23,4 @@ export class WorkGPTPage implements OnInit, OnDestroy {
   getUerInputText(text: any){
     this.textList.push(text);
   }
-
-  getLoadingObservable(){
-    const obs = new BehaviorSubject(true);
-    setTimeout(() => {obs.next(false)}, 3000);
-    return obs;
-  }
 }
