@@ -19,4 +19,11 @@
       </code>
     </ion-card-content>
   </ion-card>
+  <ngs-code-editor
+    *ngIf="isCodeDisplayed"
+    [readOnly]="false"
+    [theme]="theme"
+    [codeModel]="model"
+  >
+  </ngs-code-editor>
 </div>

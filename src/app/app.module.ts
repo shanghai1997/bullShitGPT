@@ -5,6 +5,7 @@ import { AppComponent } from './app.component';
 import { IonicModule } from '@ionic/angular';
 import { AppRoutingModule } from "./app-routing.module";
 import { FormsModule } from "@angular/forms";
+import { CodeEditorModule } from '@ngstack/code-editor';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,8 @@ import { FormsModule } from "@angular/forms";
     FormsModule,
     BrowserModule,
     AppRoutingModule,
-    IonicModule.forRoot()
+    IonicModule.forRoot(),
+    CodeEditorModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]

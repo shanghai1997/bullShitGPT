@@ -4,6 +4,7 @@ import { WorkGPTPage } from "./workGPT.page";
 import { NgModule } from "@angular/core";
 import {CommonModule} from "@angular/common";
 import {ChatBlockComponent} from "./chat-block/chatBlock.component";
+import {CodeEditorModule} from "@ngstack/code-editor";
 
 @NgModule({
   declarations: [
@@ -14,6 +15,7 @@ import {ChatBlockComponent} from "./chat-block/chatBlock.component";
     IonicModule,
     WorkGPTRoutingModule,
     CommonModule,
+    CodeEditorModule.forChild(),
   ]
 })
 export class WorkGPTModule { }
