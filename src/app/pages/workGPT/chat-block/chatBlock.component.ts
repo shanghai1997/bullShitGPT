@@ -10,6 +10,8 @@ export class ChatBlockComponent implements OnInit, OnDestroy {
   @Input() text: string = ''
   loadingBehaviorSubj: Observable<any>
   isCodeDisplayed: boolean = false
+  editorOptions = {theme: 'vs-dark', language: 'javascript'};
+  code: string= 'function x() {\nconsole.log("Hello world!");\n}';
 
 
   constructor(
