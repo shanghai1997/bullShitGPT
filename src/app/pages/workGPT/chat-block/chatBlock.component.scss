@@ -25,4 +25,11 @@
       }
     }
   }
+  .editor {
+    background: lightgrey;
+    white-space: nowrap;
+    .minimap {
+      display: none;
+    }
+  }
 }
