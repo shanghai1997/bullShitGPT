@@ -21,15 +21,11 @@
         --background: grey;
         --color: white;
       }
-      code {
+      .editor {
+        background: black;
+        white-space: nowrap;
+        max-height: 150px;
       }
-    }
-  }
-  .editor {
-    background: lightgrey;
-    white-space: nowrap;
-    .minimap {
-      display: none;
     }
   }
 }

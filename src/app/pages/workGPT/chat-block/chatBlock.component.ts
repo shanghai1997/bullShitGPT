@@ -8,10 +8,21 @@ import {BehaviorSubject, interval, map, mergeMap, Observable, timer} from "rxjs"
 })
 export class ChatBlockComponent implements OnInit, OnDestroy {
   @Input() text: string = ''
+  result: any
   loadingBehaviorSubj: Observable<any>
   isCodeDisplayed: boolean = false
-  editorOptions = {theme: 'vs-dark', language: 'javascript'};
-  code: string= 'function x() {\nconsole.log("Hello world!");\n}';
+  // https://microsoft.github.io/monaco-editor/typedoc/interfaces/editor.IStandaloneEditorConstructionOptions.html#lineHeight
+  editorOptions = {theme: 'vs-dark', language: 'javascript', cursorWidth: 0, cursorBlinking: 'solid', cursorStyle: 'underline-thin',
+    minimap: {
+      autohide: true,
+      enabled: false
+    },
+    scrollbar: {
+      handleMouseWheel: false,
+      vertical: 'hidden'
+    }
+  };
+  code: string= 'function x() {\nconsole.log("Hello world!");\n} \nx()';
 
 
   constructor(
@@ -26,5 +37,11 @@ export class ChatBlockComponent implements OnInit, OnDestroy {
   }
 
   ngOnDestroy() {
+  }
+
+  execute() {
+    const F = new Function (this.code);
+    this.result = F();
+    console.log(this.result)
   }
 }

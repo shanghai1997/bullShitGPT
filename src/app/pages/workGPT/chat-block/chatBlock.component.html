@@ -10,16 +10,16 @@
     <ion-card-content>
       <ion-item lines="none">
         <ion-text>javascript</ion-text>
-        <ion-icon color="primary" name="information-circle" slot="end"></ion-icon>
+        <ion-button color="light" slot="end"> Run
+          <ion-icon color="success" size="large" name="caret-forward-outline" slot="end" (click)="execute()"></ion-icon>
+        </ion-button>
       </ion-item>
-      <code class="code-content">
-        <span class="hljs-string">``</span>
-        <span class="hljs-string">`javascript const bubbleSort = arr =&gt; arr.sort((a, b) =&gt; a - b);
-          </span>
-      </code>
+      <div>
+        <ngx-monaco-editor class="editor" [options]="editorOptions" [(ngModel)]="code"></ngx-monaco-editor>
+      </div>
     </ion-card-content>
   </ion-card>
-  <div>
-    <ngx-monaco-editor class="editor" [options]="editorOptions" [(ngModel)]="code"></ngx-monaco-editor>
-  </div>
+  <ion-text color="primary" #output>
+    <h1>{{result}}</h1>
+  </ion-text>
 </div>
