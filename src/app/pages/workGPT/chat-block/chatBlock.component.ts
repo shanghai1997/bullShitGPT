@@ -22,7 +22,7 @@ export class ChatBlockComponent implements OnInit, OnDestroy {
       vertical: 'hidden'
     }
   };
-  code: string= 'function x() {\nconsole.log("Hello world!");\n} \nx()';
+  code: string= 'function x() {\nreturn "Hello world!";\n} \nx()';
 
 
   constructor(
@@ -40,8 +40,10 @@ export class ChatBlockComponent implements OnInit, OnDestroy {
   }
 
   execute() {
-    const F = new Function (this.code);
-    this.result = F();
-    console.log(this.result)
+    this.result = eval(this.code);
+  }
+
+  addStringJs(stringOfJs: string) {
+    return new Function(stringOfJs)();
   }
 }
